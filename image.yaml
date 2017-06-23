@@ -26,3 +26,5 @@ sources:
       md5: 65295587a719fd0650ad9337ec3c2d00
     - artifact: https://maven.repository.redhat.com/ga/org/jboss/teiid/teiid-hibernate-dialect/8.12.10.6_3-redhat-2/teiid-hibernate-dialect-8.12.10.6_3-redhat-2.jar
       md5: db38b9a7cc48c049a8f551367c20d67d
+dogen:
+    version: 2.0.1
