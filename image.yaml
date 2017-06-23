@@ -1,0 +1,28 @@
+name: "jboss-datavirt-6/datavirt63-driver-openshift"
+description: "Red Hat JBoss Data Virtualization 6.3 driver OpenShift container image"
+version: "1.2"
+from: "jboss/base-rhel7:1.0"
+envs:
+    - name: "JBOSS_PRODUCT"
+      value: "datavirt_driver"
+    - name: "JBOSS_DATAVIRT_DRIVER_VERSION"
+      value: "6.3.5.GA"
+    - name: "PRODUCT_VERSION"
+      value: "6.3.5.GA"
+labels:
+    - name: "io.k8s.description"
+      value: "JDBC Driver for JBoss Data Virtualization"
+    - name: "io.k8s.display-name"
+      value: "JBoss Data Virtualization 6.3 JDBC Driver Module"
+    - name: "io.openshift.tags"
+      value: "datavirt,datavirt6"
+packages:
+    - gettext
+scripts:
+    - package: os-datavirt-driver
+      exec: install.sh
+sources:
+    - artifact: https://maven.repository.redhat.com/ga/org/jboss/teiid/teiid-jdbc/8.12.10.6_3-redhat-2/teiid-jdbc-8.12.10.6_3-redhat-2.jar
+      md5: 65295587a719fd0650ad9337ec3c2d00
+    - artifact: https://maven.repository.redhat.com/ga/org/jboss/teiid/teiid-hibernate-dialect/8.12.10.6_3-redhat-2/teiid-hibernate-dialect-8.12.10.6_3-redhat-2.jar
+      md5: db38b9a7cc48c049a8f551367c20d67d
