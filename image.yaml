@@ -27,4 +27,8 @@ sources:
     - artifact: https://maven.repository.redhat.com/ga/org/jboss/teiid/teiid-hibernate-dialect/8.12.10.6_3-redhat-2/teiid-hibernate-dialect-8.12.10.6_3-redhat-2.jar
       md5: db38b9a7cc48c049a8f551367c20d67d
 dogen:
-    version: 2.0.1
+    version: 2.1.0
+    plugins:
+        dist_git:
+            repo: jboss-datavirt-6-docker
+            branch: ce-1.2-openshift-driver-datavirt-6.3-jdk-8-rhel-7
