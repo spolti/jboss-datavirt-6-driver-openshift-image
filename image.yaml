@@ -27,7 +27,7 @@ sources:
     - artifact: https://maven.repository.redhat.com/ga/org/jboss/teiid/teiid-hibernate-dialect/8.12.11.6_3-redhat-3/teiid-hibernate-dialect-8.12.11.6_3-redhat-3.jar
       md5: 3c749ec4bef08b68ac0e58a659695fdf
 dogen:
-    version: 2.1.0
+    version: 2.4.0
     plugins:
         dist_git:
             repo: jboss-datavirt-6-docker
