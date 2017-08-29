@@ -6,9 +6,9 @@ envs:
     - name: "JBOSS_PRODUCT"
       value: "datavirt_driver"
     - name: "JBOSS_DATAVIRT_DRIVER_VERSION"
-      value: "6.3.6.GA"
+      value: "6.3.7.GA"
     - name: "PRODUCT_VERSION"
-      value: "6.3.6.GA"
+      value: "6.3.7.GA"
 labels:
     - name: "io.k8s.description"
       value: "JDBC Driver for JBoss Data Virtualization"
@@ -22,12 +22,12 @@ scripts:
     - package: os-datavirt-driver
       exec: install.sh
 sources:
-    - artifact: https://maven.repository.redhat.com/ga/org/jboss/teiid/teiid-jdbc/8.12.11.6_3-redhat-3/teiid-jdbc-8.12.11.6_3-redhat-3.jar
-      md5: 0040f3962408603e725833ca2460fb55
-    - artifact: https://maven.repository.redhat.com/ga/org/jboss/teiid/teiid-hibernate-dialect/8.12.11.6_3-redhat-3/teiid-hibernate-dialect-8.12.11.6_3-redhat-3.jar
-      md5: 3c749ec4bef08b68ac0e58a659695fdf
+    - artifact: https://maven.repository.redhat.com/ga/org/jboss/teiid/teiid-jdbc/8.12.12.6_3-redhat-1/teiid-jdbc-8.12.12.6_3-redhat-1.jar
+      md5: 6c799d9cfc66541f9fce920fd29bf7cb
+    - artifact: https://maven.repository.redhat.com/ga/org/jboss/teiid/teiid-hibernate-dialect/8.12.12.6_3-redhat-1/teiid-hibernate-dialect-8.12.12.6_3-redhat-1.jar
+      md5: 44833dd4953d56cb1f75f3aee0743bc9
 dogen:
-    version: 2.4.0
+    version: 2.4.1
     plugins:
         dist_git:
             repo: jboss-datavirt-6-docker
