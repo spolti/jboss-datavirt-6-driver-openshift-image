@@ -1,14 +1,9 @@
+schema_version: 1
+
 name: "jboss-datavirt-6/datavirt63-driver-openshift"
 description: "Red Hat JBoss Data Virtualization 6.3 driver OpenShift container image"
 version: "1.2"
 from: "jboss/base-rhel7:1.0"
-envs:
-    - name: "JBOSS_PRODUCT"
-      value: "datavirt_driver"
-    - name: "JBOSS_DATAVIRT_DRIVER_VERSION"
-      value: "6.3.7.GA"
-    - name: "PRODUCT_VERSION"
-      value: "6.3.7.GA"
 labels:
     - name: "io.k8s.description"
       value: "JDBC Driver for JBoss Data Virtualization"
@@ -16,19 +11,27 @@ labels:
       value: "JBoss Data Virtualization 6.3 JDBC Driver Module"
     - name: "io.openshift.tags"
       value: "datavirt,datavirt6"
+envs:
+    - name: "JBOSS_PRODUCT"
+      value: "datavirt_driver"
+    - name: "JBOSS_DATAVIRT_DRIVER_VERSION"
+      value: "6.3.7.GA"
+    - name: "PRODUCT_VERSION"
+      value: "6.3.7.GA"
+modules:
+      install:
+          - name: os-datavirt-driver
 packages:
-    - gettext
-scripts:
-    - package: os-datavirt-driver
-      exec: install.sh
-sources:
-    - artifact: https://maven.repository.redhat.com/ga/org/jboss/teiid/teiid-jdbc/8.12.12.6_3-redhat-1/teiid-jdbc-8.12.12.6_3-redhat-1.jar
+      repositories:
+          - jboss-os
+      install:
+          - gettext
+artifacts:
+    - url: https://maven.repository.redhat.com/ga/org/jboss/teiid/teiid-jdbc/8.12.12.6_3-redhat-1/teiid-jdbc-8.12.12.6_3-redhat-1.jar
       md5: 6c799d9cfc66541f9fce920fd29bf7cb
-    - artifact: https://maven.repository.redhat.com/ga/org/jboss/teiid/teiid-hibernate-dialect/8.12.12.6_3-redhat-1/teiid-hibernate-dialect-8.12.12.6_3-redhat-1.jar
+    - url: https://maven.repository.redhat.com/ga/org/jboss/teiid/teiid-hibernate-dialect/8.12.12.6_3-redhat-1/teiid-hibernate-dialect-8.12.12.6_3-redhat-1.jar
       md5: 44833dd4953d56cb1f75f3aee0743bc9
-dogen:
-    version: 2.4.3
-    plugins:
-        dist_git:
-            repo: jboss-datavirt-6-docker
+osbs:
+      repository:
+            name: jboss-datavirt-6-docker
             branch: ce-1.2-openshift-driver-datavirt-6.3-jdk-8-rhel-7
