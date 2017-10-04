@@ -2,7 +2,7 @@
 
 set -e
 
-export JDV_ARTIFACT_VERSION=8.12.12.6_3-redhat-1
+export JDV_ARTIFACT_VERSION=8.12.11.6_4-redhat-64-6
 SOURCES_DIR="/tmp/artifacts"
 SCRIPT_DIR=$(dirname $0)
 ADDED_DIR=${SCRIPT_DIR}/added
