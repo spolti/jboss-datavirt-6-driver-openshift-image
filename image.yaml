@@ -15,9 +15,9 @@ envs:
     - name: "JBOSS_PRODUCT"
       value: "datavirt_driver"
     - name: "JBOSS_DATAVIRT_DRIVER_VERSION"
-      value: "6.3.7.GA"
+      value: "6.3.8.GA"
     - name: "PRODUCT_VERSION"
-      value: "6.3.7.GA"
+      value: "6.3.8.GA"
 modules:
       install:
           - name: os-datavirt-driver
@@ -27,10 +27,11 @@ packages:
       install:
           - gettext
 artifacts:
-    - url: https://maven.repository.redhat.com/ga/org/jboss/teiid/teiid-jdbc/8.12.12.6_3-redhat-1/teiid-jdbc-8.12.12.6_3-redhat-1.jar
-      md5: 6c799d9cfc66541f9fce920fd29bf7cb
-    - url: https://maven.repository.redhat.com/ga/org/jboss/teiid/teiid-hibernate-dialect/8.12.12.6_3-redhat-1/teiid-hibernate-dialect-8.12.12.6_3-redhat-1.jar
-      md5: 44833dd4953d56cb1f75f3aee0743bc9
+    - path: teiid-jdbc-8.12.13.6_3-redhat-1.jar
+      md5: 8864cb54a4e449db529947a5934f3603
+    - path: teiid-hibernate-dialect-8.12.13.6_3-redhat-1.jar
+      md5: 4263bddd09f6c7433dba8409553d4e59
+
 osbs:
       repository:
             name: jboss-datavirt-6-docker
