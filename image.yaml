@@ -3,7 +3,7 @@ schema_version: 1
 name: "jboss-datavirt-6/datavirt63-driver-openshift"
 description: "Red Hat JBoss Data Virtualization 6.3 driver OpenShift container image"
 version: "1.2"
-from: "jboss/base-rhel7:1.0"
+from: "jboss/base-rhel7:1.1"
 labels:
     - name: "io.k8s.description"
       value: "JDBC Driver for JBoss Data Virtualization"
