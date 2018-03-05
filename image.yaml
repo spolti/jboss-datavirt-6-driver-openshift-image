@@ -5,6 +5,8 @@ description: "Red Hat JBoss Data Virtualization 6.4 driver OpenShift container i
 version: "1.0"
 from: "jboss/base-rhel7:1.1"
 labels:
+    - name: "com.redhat.component"
+      value: "jboss-datavirt-6-datavirt64-driver-openshift-container"
     - name: "io.k8s.description"
       value: "JDBC Driver for JBoss Data Virtualization"
     - name: "io.k8s.display-name"
@@ -35,5 +37,5 @@ artifacts:
       md5: de15ec3201733d6c0669b5b81336d0b4
 osbs:
       repository:
-            name: jboss-datavirt-6-docker
+            name: containers/jboss-datavirt-6
             branch: jb-datavirt-6.4-driver-openshift-rhel-7
