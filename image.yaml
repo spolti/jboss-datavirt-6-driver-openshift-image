@@ -31,10 +31,10 @@ packages:
       install:
           - gettext
 artifacts:
-    - path: teiid-jdbc-8.12.13.6_4-redhat-64-3.jar 
-      md5: 49b5fb298bf2d5be761514f990f427a7
-    - path: teiid-hibernate-dialect-8.12.13.6_4-redhat-64-3.jar
-      md5: aea13b15f2ecad3b53c491951be57be0
+    - path: teiid-jdbc-8.12.14.6_4-redhat-64-2.jar 
+      md5: 8e3aed50a29ec9316952c1be47872988
+    - path: teiid-hibernate-dialect-8.12.14.6_4-redhat-64-2.jar
+      md5: 4c44473ec53f5fa89356646fc8fc4cf2
 osbs:
       repository:
             name: containers/jboss-datavirt-6
