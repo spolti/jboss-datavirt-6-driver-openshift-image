@@ -2,12 +2,15 @@
 
 set -e
 
-export JDV_ARTIFACT_VERSION=8.12.13.6_3-redhat-1
 SOURCES_DIR="/tmp/artifacts"
 SCRIPT_DIR=$(dirname $0)
 ADDED_DIR=${SCRIPT_DIR}/added
 TARGET_DIR=/extensions
-MODULE_DIR=${TARGET_DIR}/modules/system/layers/openshift/org/jboss/teiid/client/main
+
+#JDBC_ARTIFACT="ojdbc6.jar"
+#CUSTOM_MODULE_NAME="com.oracle"
+
+MODULE_DIR=${TARGET_DIR}/modules/${DRIVER_DIR}
 
 mkdir -p ${MODULE_DIR}
 
@@ -15,8 +18,7 @@ cp -r ${ADDED_DIR}/install.sh ${ADDED_DIR}/install.properties ${TARGET_DIR}
 
 # create the module
 mkdir -p /org/jboss/teiid/client/main
-cp -r ${SOURCES_DIR}/teiid-jdbc-${JDV_ARTIFACT_VERSION}.jar ${MODULE_DIR}
-cp -r ${SOURCES_DIR}/teiid-hibernate-dialect-${JDV_ARTIFACT_VERSION}.jar ${MODULE_DIR}
+cp -r ${SOURCES_DIR}/${JDBC_ARTIFACT} ${MODULE_DIR}
 cat ${ADDED_DIR}/module.xml | envsubst > ${MODULE_DIR}/module.xml
 
 # Make sure the owner of added files is the 'jboss' user

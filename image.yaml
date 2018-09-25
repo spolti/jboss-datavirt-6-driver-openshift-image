@@ -1,42 +1,33 @@
 schema_version: 1
 
-name: "jboss-datavirt-6/datavirt63-driver-openshift"
+name: "fspolti/custom-image-driver"
 description: "Red Hat JBoss Data Virtualization 6.3 driver OpenShift container image"
 version: "1.2"
 from: "jboss/base-rhel7:1.1"
 labels:
-    - name: "com.redhat.component"
-      value: "jboss-datavirt-6-datavirt63-driver-openshift-container"
     - name: "io.k8s.description"
-      value: "JDBC Driver for JBoss Data Virtualization"
+      value: "custom-jdbc-image"
     - name: "io.k8s.display-name"
-      value: "JBoss Data Virtualization 6.3 JDBC Driver Module"
+      value: "custom-jdbc-image"
     - name: "io.openshift.tags"
-      value: "datavirt,datavirt6"
+      value: "custom-jdbc-image"
 envs:
-    - name: "JBOSS_PRODUCT"
-      value: "datavirt_driver"
-    - name: "JBOSS_DATAVIRT_DRIVER_VERSION"
-      value: "6.3.8.GA"
-    - name: "PRODUCT_VERSION"
-      value: "6.3.8.GA"
+    - name: "CUSTOM_MODULE_NAME"
+      value: "com.oracle"
+    - name: "JDBC_ARTIFACT"
+      value: "ojdbc6.jar"
+    - name: "DRIVER_DIR"
+      value: "com/oracle/main"
 modules:
       repositories:
           - path: modules
       install:
-          - name: os-datavirt-driver
+          - name: os-custom-driver
 packages:
       repositories:
           - jboss-os
       install:
           - gettext
 artifacts:
-    - path: teiid-jdbc-8.12.13.6_3-redhat-1.jar
-      md5: 8864cb54a4e449db529947a5934f3603
-    - path: teiid-hibernate-dialect-8.12.13.6_3-redhat-1.jar
-      md5: 4263bddd09f6c7433dba8409553d4e59
-
-osbs:
-      repository:
-            name: containers/jboss-datavirt-6
-            branch: jb-datavirt-6.3-driver-openshift-rhel-7
+    - path: ojdbc6.jar
+      md5: 76852c42c44401f44d26319a74e55f5b

@@ -1,5 +1,5 @@
 schema_version: 1
 
-name: os-datavirt-driver
+name: os-custom-driver
 execute:
     - script: install.sh
